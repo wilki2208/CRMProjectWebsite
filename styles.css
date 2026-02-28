@@ -140,7 +140,7 @@ h3 {
 }
 
 .brand-copy span {
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
@@ -148,7 +148,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  font-size: 0.92rem;
+  font-size: 0.96rem;
 }
 
 .site-nav a {
@@ -218,7 +218,7 @@ main {
 .eyebrow {
   margin: 0 0 0.8rem;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -243,18 +243,27 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: clamp(1.32rem, 2.1vw, 1.62rem);
 }
 
 p {
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.62;
+}
+
+.hero-tagline {
+  margin-top: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2f2921;
+  max-width: 50ch;
 }
 
 .hero-text,
 .section-heading p,
 .section-intro,
 .feature-card p,
+.platform-card p,
 .comparison-card li,
 .timeline-item p,
 .service-card p,
@@ -262,6 +271,7 @@ p {
 .hero-metric p,
 .form-status {
   color: var(--muted);
+  font-size: 0.98rem;
 }
 
 .hero-text {
@@ -274,22 +284,36 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
-.hero-points {
+.hero-outcomes {
   margin: 1.6rem 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.8rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
 }
 
-.hero-points li {
-  padding: 0.8rem 1rem;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(13, 107, 107, 0.1);
-  background: rgba(255, 255, 255, 0.48);
+.hero-outcomes li {
+  padding: 0.72rem 0.82rem;
+  border-radius: 14px;
+  border: 1px solid rgba(13, 107, 107, 0.16);
+  background: rgba(255, 255, 255, 0.68);
+  display: grid;
+  gap: 0.2rem;
+}
+
+.hero-outcomes strong {
+  font-family: "Space Grotesk", "Arial Narrow", sans-serif;
+  font-size: 0.92rem;
+}
+
+.hero-outcomes span {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.35;
 }
 
 .hero-panel {
@@ -320,7 +344,7 @@ p {
   align-items: center;
   gap: 0.5rem;
   font-family: "Space Grotesk", "Arial Narrow", sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--teal);
 }
@@ -347,12 +371,12 @@ p {
 }
 
 .hero-visual-grid strong {
-  font-size: 0.84rem;
+  font-size: 0.95rem;
   font-family: "Space Grotesk", "Arial Narrow", sans-serif;
 }
 
 .hero-visual-grid p {
-  font-size: 0.75rem;
+  font-size: 0.86rem;
   color: var(--muted);
   line-height: 1.35;
 }
@@ -364,7 +388,7 @@ p {
   padding: 0.5rem 0.75rem;
   background: var(--teal-soft);
   color: var(--teal);
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 700;
 }
 
@@ -380,7 +404,7 @@ p {
 .comparison-label,
 .contact-notes span {
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -474,7 +498,7 @@ p {
 .feature-card,
 .platform-card,
 .service-card {
-  padding: 1.25rem;
+  padding: 1.35rem;
 }
 
 .feature-card,
@@ -523,7 +547,71 @@ p {
   margin-bottom: 0.35rem;
   font-family: "Space Grotesk", "Arial Narrow", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.05rem;
+}
+
+.proof-section {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.proof-card {
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.proof-card h3 {
+  margin-top: 0.45rem;
+}
+
+.proof-label {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.35rem 0.68rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-card-before {
+  border-color: rgba(176, 58, 46, 0.18);
+  background: linear-gradient(160deg, rgba(255, 238, 233, 0.8), rgba(255, 255, 255, 0.7));
+}
+
+.proof-card-before .proof-label {
+  background: var(--bad-soft);
+  color: var(--bad);
+}
+
+.proof-card-after {
+  border-color: rgba(31, 122, 69, 0.2);
+  background: linear-gradient(160deg, rgba(236, 250, 240, 0.82), rgba(255, 255, 255, 0.72));
+}
+
+.proof-card-after .proof-label {
+  background: var(--good-soft);
+  color: var(--good);
+}
+
+.proof-card ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1.05rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.proof-card li {
+  font-size: 0.96rem;
+  color: var(--muted);
 }
 
 .ownership-section {
@@ -682,7 +770,7 @@ p {
 
 .form-status {
   min-height: 1.5rem;
-  font-size: 0.84rem;
+  font-size: 0.9rem;
 }
 
 .form-status.is-success {
@@ -736,6 +824,10 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
   .section-heading h2,
   .contact-copy h2,
   h2 {
@@ -784,6 +876,10 @@ p {
   }
 
   .hero-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-outcomes {
     grid-template-columns: 1fr;
   }
 
