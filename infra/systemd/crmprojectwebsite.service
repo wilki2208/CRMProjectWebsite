@@ -1,0 +1,18 @@
+[Unit]
+Description=CRM Project Website
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/crmprojectwebsite
+Environment=HOST=0.0.0.0
+Environment=PORT=443
+Environment=DIRECTORY=/opt/crmprojectwebsite
+Environment=TLS_CERTFILE=/opt/crmprojectwebsite/tls/fullchain.pem
+Environment=TLS_KEYFILE=/opt/crmprojectwebsite/tls/privkey.pem
+ExecStart=/usr/bin/python3 /opt/crmprojectwebsite/server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
