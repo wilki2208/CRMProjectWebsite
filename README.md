@@ -1,6 +1,6 @@
 # CRMProjectWebsite
 
-Single-page marketing site for the BusinessApp CRM offer.
+Single-page marketing site for the Freehold CRM offer.
 
 ## Local preview
 
