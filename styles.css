@@ -350,13 +350,15 @@ p {
 
 .hero-stack,
 .card-grid,
-.services-grid {
+.services-grid,
+.platform-grid {
   display: grid;
   gap: 1rem;
 }
 
 .stack-card,
 .feature-card,
+.platform-card,
 .comparison-card,
 .service-card,
 .contact-form {
@@ -420,13 +422,31 @@ p {
 }
 
 .feature-card,
+.platform-card,
 .service-card {
   padding: 1.25rem;
 }
 
-.feature-card {
+.feature-card,
+.platform-card {
   display: grid;
   gap: 0.7rem;
+}
+
+.platform-section {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.platform-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.platform-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(252, 245, 232, 0.86));
+  border-color: rgba(13, 107, 107, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(13, 107, 107, 0.03);
 }
 
 .split-section {
@@ -661,7 +681,8 @@ p {
   }
 
   .card-grid,
-  .services-grid {
+  .services-grid,
+  .platform-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -707,7 +728,8 @@ p {
   }
 
   .card-grid,
-  .services-grid {
+  .services-grid,
+  .platform-grid {
     grid-template-columns: 1fr;
   }
 
