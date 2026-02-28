@@ -22,9 +22,10 @@ for (const element of revealElements) {
 
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
+const contactSubmitButton = contactForm?.querySelector('button[type="submit"]');
 
 if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
@@ -39,9 +40,53 @@ if (contactForm && formStatus) {
       return;
     }
 
-    formStatus.textContent =
-      "Placeholder only: this enquiry form is ready for real inbox wiring on the next iteration.";
-    formStatus.classList.add("is-success");
-    contactForm.reset();
+    const payload = {
+      full_name: name,
+      email,
+      source: "Freehold CRM Website",
+      preferred_contact_method: "email",
+      notes: `Company: ${company}\n\nWebsite enquiry:\n${message}`,
+    };
+
+    if (contactSubmitButton) contactSubmitButton.disabled = true;
+    formStatus.textContent = "Sending your enquiry...";
+    formStatus.classList.remove("is-success");
+
+    try {
+      const response = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        let detail = "We could not submit your enquiry. Please try again.";
+        try {
+          const errorBody = await response.json();
+          if (errorBody?.detail && typeof errorBody.detail === "string") {
+            detail = errorBody.detail;
+          }
+        } catch {
+          // Keep default error message when response is not JSON.
+        }
+        throw new Error(detail);
+      }
+
+      formStatus.textContent =
+        "Thanks, your enquiry has been received and added as a lead in Freehold CRM.";
+      formStatus.classList.add("is-success");
+      contactForm.reset();
+    } catch (error) {
+      formStatus.textContent =
+        error instanceof Error
+          ? error.message
+          : "We could not submit your enquiry. Please try again.";
+      formStatus.classList.remove("is-success");
+    } finally {
+      if (contactSubmitButton) contactSubmitButton.disabled = false;
+    }
   });
 }
