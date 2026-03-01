@@ -16,6 +16,7 @@ DIRECTORY = Path(os.environ.get("DIRECTORY", Path(__file__).resolve().parent)).r
 TLS_CERTFILE = os.environ.get("TLS_CERTFILE")
 TLS_KEYFILE = os.environ.get("TLS_KEYFILE")
 BACKEND_BASE_URL = os.environ.get("BACKEND_BASE_URL", "http://127.0.0.1:8000")
+BACKEND_API_KEY = os.environ.get("BACKEND_API_KEY", "").strip()
 
 SKIP_PROXY_HEADERS = {
     "connection",
@@ -54,6 +55,8 @@ class WebsiteHandler(SimpleHTTPRequestHandler):
         forwarded_for = self.client_address[0] if self.client_address else ""
         if forwarded_for:
             headers["X-Forwarded-For"] = forwarded_for
+        if BACKEND_API_KEY:
+            headers["X-API-Key"] = BACKEND_API_KEY
 
         request = Request(target_url, data=body, method=method, headers=headers)
 
