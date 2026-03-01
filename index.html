@@ -31,7 +31,7 @@
         />
         <span class="brand-copy">
           <strong>Freehold CRM</strong>
-          <span>Own the system. Keep the code.</span>
+          <span>Run the system. Keep control.</span>
         </span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -108,8 +108,8 @@
                 <p>No upgrade gates or seat-based pricing</p>
               </div>
               <div>
-                <strong>You own the code</strong>
-                <p>Run it yourself or ask us to manage it for you</p>
+                <strong>You get source access</strong>
+                <p>Use an internal-use licence to run and modify it</p>
               </div>
             </div>
           </div>
@@ -307,7 +307,7 @@
           <h2>What you pay for, and what you keep.</h2>
           <p>
             This is a one-off software project with optional ongoing help.
-            You get the system, the source code, and the freedom to run it on your own terms.
+            You get source access and a perpetual internal-use licence to run and modify on your terms.
           </p>
         </div>
         <div class="comparison reveal">
@@ -330,7 +330,7 @@
               <li>All features are included and you choose what to turn on</li>
               <li>No mandatory monthly software licence</li>
               <li>Run it yourself or choose optional managed support</li>
-              <li>The code is yours to keep, maintain, and extend</li>
+              <li>Perpetual internal-use rights to maintain and extend</li>
             </ul>
           </div>
         </div>
@@ -430,7 +430,45 @@
                 placeholder="Any assumptions, dependencies, or exclusions."
               ></textarea>
             </label>
+            <fieldset class="order-fieldset order-fieldset-single">
+              <legend>Acceptance checks (required)</legend>
+              <label class="check-option">
+                <input type="checkbox" name="accept_authority" required />
+                <span>I confirm I am authorised to place this order on behalf of the customer.</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="accept_ip" required />
+                <span>
+                  I accept that Freehold CRM retains all intellectual property and source code ownership.
+                </span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="accept_no_resale" required />
+                <span>I accept that resale, redistribution, sublicensing, and white-label use are prohibited.</span>
+              </label>
+            </fieldset>
+            <div class="signature-grid">
+              <label>
+                Signatory name
+                <input type="text" name="sign_name" placeholder="Jane Smith" required />
+              </label>
+              <label>
+                Signatory title
+                <input type="text" name="sign_title" placeholder="Managing Director" required />
+              </label>
+              <label>
+                Signature date
+                <input type="date" name="sign_date" required />
+              </label>
+              <label>
+                Freehold CRM representative
+                <input type="text" name="freehold_rep" placeholder="TBC" />
+              </label>
+            </div>
             <button class="button button-primary button-full" type="submit">Generate order form</button>
+            <button class="button button-secondary button-full" type="button" id="order-download-pdf" disabled>
+              Download branded PDF
+            </button>
             <button class="button button-secondary button-full" type="button" id="order-download" disabled>
               Download .txt copy
             </button>

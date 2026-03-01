@@ -851,6 +851,10 @@ p {
   gap: 0.55rem 0.8rem;
 }
 
+.order-fieldset-single {
+  grid-template-columns: 1fr;
+}
+
 .order-fieldset legend {
   padding: 0 0.35rem;
   font-family: "Space Grotesk", "Arial Narrow", sans-serif;
@@ -873,6 +877,12 @@ p {
   height: 1rem;
   margin: 0;
   accent-color: var(--accent);
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .order-output-wrap {
@@ -1042,7 +1052,8 @@ p {
   }
 
   .order-form-grid,
-  .order-fieldset {
+  .order-fieldset,
+  .signature-grid {
     grid-template-columns: 1fr;
   }
 
