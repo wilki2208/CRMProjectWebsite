@@ -251,7 +251,7 @@ h3 {
 
 p {
   margin: 0;
-  line-height: 1.62;
+  line-height: 1.66;
 }
 
 .hero-tagline {
@@ -281,12 +281,12 @@ p {
 .hero-metric p,
 .form-status {
   color: var(--muted);
-  font-size: 1.02rem;
+  font-size: 1.06rem;
 }
 
 .hero-text {
   margin-top: 1.1rem;
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   max-width: 58ch;
 }
 
@@ -329,9 +329,7 @@ p {
 .hero-panel {
   padding: 1.3rem;
   border-radius: calc(var(--radius-xl) - 6px);
-  background:
-    linear-gradient(180deg, rgba(255, 250, 242, 0.92), rgba(255, 244, 225, 0.94)),
-    linear-gradient(135deg, rgba(184, 76, 46, 0.04), rgba(13, 107, 107, 0.08));
+  background: linear-gradient(180deg, #fbf4e8, #f6eddf);
   border: 1px solid rgba(138, 47, 24, 0.1);
   display: grid;
   gap: 1rem;
@@ -340,7 +338,7 @@ p {
 .hero-visual {
   border-radius: var(--radius-lg);
   border: 1px solid rgba(13, 107, 107, 0.16);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(253, 246, 235, 0.9));
+  background: #fff9ee;
   padding: 0.9rem;
   display: grid;
   gap: 0.8rem;
@@ -371,7 +369,7 @@ p {
 .hero-visual-grid div {
   border-radius: 12px;
   border: 1px solid rgba(70, 51, 21, 0.14);
-  background: rgba(255, 255, 255, 0.74);
+  background: #fffdf7;
   padding: 0.58rem 0.65rem;
   display: grid;
   gap: 0.18rem;
@@ -400,6 +398,59 @@ p {
 .hero-kpi span {
   font-size: 0.74rem;
   color: #40605f;
+}
+
+.hero-preview {
+  border-radius: 12px;
+  border: 1px solid rgba(70, 51, 21, 0.14);
+  background: linear-gradient(180deg, #ffffff, #f8f8f3);
+  padding: 0.62rem 0.68rem;
+  display: grid;
+  gap: 0.58rem;
+}
+
+.hero-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.hero-preview-head span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3d4a4a;
+}
+
+.hero-preview-head strong {
+  font-size: 0.74rem;
+  color: #0d6b6b;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-preview-bars {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.hero-preview-bars div {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.hero-preview-bars span {
+  font-size: 0.74rem;
+  color: #5c584f;
+}
+
+.hero-preview-bars em {
+  display: block;
+  height: 0.42rem;
+  width: var(--w);
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0d6b6b, #4f9f9f);
+  font-style: normal;
 }
 
 .hero-visual-grid strong {
@@ -645,7 +696,50 @@ p {
 }
 
 .proof-card li {
-  font-size: 1.02rem;
+  font-size: 1.06rem;
+  color: var(--muted);
+}
+
+.pricing-strip-section {
+  padding-top: clamp(1.15rem, 2.2vw, 1.45rem);
+  padding-bottom: clamp(1.15rem, 2.2vw, 1.45rem);
+}
+
+.pricing-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.pricing-step {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(13, 107, 107, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(243, 252, 250, 0.85));
+  padding: 1.05rem 1.08rem;
+  display: grid;
+  gap: 0.36rem;
+}
+
+.pricing-step span {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(13, 107, 107, 0.14);
+  color: #0d6b6b;
+  font-family: "Space Grotesk", "Arial Narrow", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.pricing-step strong {
+  font-family: "Space Grotesk", "Arial Narrow", sans-serif;
+  font-size: 1.06rem;
+}
+
+.pricing-step p {
+  font-size: 0.95rem;
   color: var(--muted);
 }
 
@@ -860,6 +954,10 @@ p {
   }
 
   .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-strip {
     grid-template-columns: 1fr;
   }
 
