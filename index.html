@@ -39,6 +39,7 @@
         <a href="#features">Features</a>
         <a href="#approach">How It Works</a>
         <a href="#ownership">Ownership</a>
+        <a href="#order">Order Form</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="nav-cta" href="#contact">Book a Call</a>
@@ -331,6 +332,115 @@
               <li>Run it yourself or choose optional managed support</li>
               <li>The code is yours to keep, maintain, and extend</li>
             </ul>
+          </div>
+        </div>
+        <div class="rights-panel reveal">
+          <h3>Code rights at a glance</h3>
+          <ul role="list">
+            <li>Freehold CRM keeps all intellectual property and copyright in the platform and source code.</li>
+            <li>Your business gets a perpetual licence to use the system and modify it for internal operations.</li>
+            <li>Resale, redistribution, sublicensing, or white-labelling to third parties is not permitted.</li>
+            <li>Final legal wording is set in your signed order form and service agreement.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section order-section" id="order">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Commercials</p>
+          <h2>Generate your order form in one place.</h2>
+          <p>
+            Fill this in during a call and generate a ready-to-send order summary with pricing, scope,
+            and licensing terms. This is for speed and clarity, not legal advice.
+          </p>
+        </div>
+        <div class="order-grid">
+          <form class="order-form reveal" id="order-form">
+            <div class="order-form-grid">
+              <label>
+                Customer company
+                <input type="text" name="customer_company" placeholder="Acme Services Ltd" required />
+              </label>
+              <label>
+                Customer legal entity
+                <input type="text" name="customer_entity" placeholder="Acme Services Limited" required />
+              </label>
+              <label>
+                Primary contact
+                <input type="text" name="contact_name" placeholder="Jane Smith" required />
+              </label>
+              <label>
+                Contact email
+                <input type="email" name="contact_email" placeholder="jane@acme.co.uk" required />
+              </label>
+              <label>
+                Implementation fee (GBP)
+                <input type="number" name="setup_fee" min="0" step="100" value="5000" required />
+              </label>
+              <label>
+                Managed service monthly (GBP)
+                <input type="number" name="monthly_fee" min="0" step="50" value="0" required />
+              </label>
+              <label>
+                Deployment option
+                <select name="deployment_option" required>
+                  <option value="Customer-managed">Customer-managed (your own environment)</option>
+                  <option value="Freehold-managed">Freehold-managed (optional monthly support)</option>
+                  <option value="Hybrid">Hybrid (shared responsibilities)</option>
+                </select>
+              </label>
+              <label>
+                Target go-live
+                <input type="date" name="go_live" />
+              </label>
+            </div>
+            <fieldset class="order-fieldset">
+              <legend>Add-ons (optional)</legend>
+              <label class="check-option">
+                <input type="checkbox" name="addons" value="Data migration" />
+                <span>Data migration</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="addons" value="Custom integration work" />
+                <span>Custom integration work</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="addons" value="Extra training sessions" />
+                <span>Extra training sessions</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="addons" value="Managed upgrades and monitoring" />
+                <span>Managed upgrades and monitoring</span>
+              </label>
+            </fieldset>
+            <label>
+              Scope summary
+              <textarea
+                name="scope_summary"
+                rows="4"
+                placeholder="Short summary of rollout scope, modules, and delivery approach."
+                required
+              ></textarea>
+            </label>
+            <label>
+              Commercial assumptions
+              <textarea
+                name="assumptions"
+                rows="3"
+                placeholder="Any assumptions, dependencies, or exclusions."
+              ></textarea>
+            </label>
+            <button class="button button-primary button-full" type="submit">Generate order form</button>
+            <button class="button button-secondary button-full" type="button" id="order-download" disabled>
+              Download .txt copy
+            </button>
+            <p class="form-status" id="order-status" aria-live="polite">
+              Generate first, then download and send with your formal contract pack.
+            </p>
+          </form>
+          <div class="order-output-wrap reveal">
+            <h3>Generated order summary</h3>
+            <pre class="order-output" id="order-output">No order generated yet.</pre>
           </div>
         </div>
       </section>
