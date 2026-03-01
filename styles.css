@@ -102,6 +102,7 @@ main,
   box-shadow: var(--shadow);
   position: sticky;
   top: 1rem;
+  z-index: 50;
 }
 
 .brand {
@@ -207,6 +208,7 @@ main {
   background: var(--panel);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
+  scroll-margin-top: 7.5rem;
 }
 
 .hero {
